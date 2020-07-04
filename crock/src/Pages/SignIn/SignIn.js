@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar, TouchableOpacity, View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import firebase from '../../services/firebaseConnection/';
 
 import { 
     Container, Input, TextButton, Button, Form,
@@ -9,23 +10,39 @@ import {
  } from './styles';
 
 export default function SignIn({ navigation }) {
+
+ const[email, setEmail] = useState('');
+ const[password, setPassword] = useState('');
+
+ async function AcessApp(){
+    if(email !== '' && password !== ''){
+        await firebase.auth().signInWithEmailAndPassword(email, password)
+        .catch((error) => {
+            alert(error.code);
+        });
+    }
+ }
  return (
    <Container>
        <CantainerForm>
         <Form>
             <Title> Login </Title>
             <Input
-                placeholder="Usuário"
+                placeholder="E-mail"
+                value={email}
+                onChangeText={(email)=> setEmail(email)}
             />
 
             <Input
                 placeholder="Senha"
+                value={password}
+                onChangeText={(password)=> setPassword(password)}
             />
 
-            <Button onPress={()=> navigation.navigate("Tabs")}>
+            <Button onPress={()=> AcessApp()}>
                 <ContainerTextButton>
                     <TextButton> Login </TextButton>
-                    <Icon name="ios-arrow-round-forward" color="#FFF" size={20} />
+                    <Icon name="arrow-right" color="#FFF" size={20} />
                 </ContainerTextButton>
             </Button>
 

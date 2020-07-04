@@ -18,7 +18,7 @@ export default function ScreenFirstEnter({ navigation }) {
                     <TextButton> Empreendedor </TextButton>
                 </Button>
 
-                <Button onPress={()=> navigation.navigate('SignIn')}>
+                <Button onPress={()=> navigation.navigate('Preload')}>
                     <TextButton> Consumidor </TextButton>
                 </Button>
             </Container>

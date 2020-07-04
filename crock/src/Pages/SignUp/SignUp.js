@@ -18,10 +18,10 @@ export default function SignUp({ navigation }) {
  const[email, setEmail] = useState('');
  const[senha, setSenha] = useState('');
 
-//  firebase.auth().signOut();
+ firebase.auth().signOut();
 async function cadastrarUsuario(){
-    if(nome !== '0' && cpf !== '' && telefone !== '' && senha !== '' ){
-        await firebase.auth().currentUserWithEmailAndPassword(email, senha)
+    if(nome !== '' && cpf !== '' && telefone !== '' && senha !== '' ){
+        await firebase.auth().createUserWithEmailAndPassword(email, senha)
         .then( async () => {
             let uid = firebase.auth().currentUser.uid;
 
@@ -57,22 +57,32 @@ async function cadastrarUsuario(){
 
          <Input
              placeholder="Nome"
+             value={nome}
+             onChangeText={(nome) => setNome(nome)}
          />
 
          <Input
              placeholder="CPF"
+             value={cpf}
+             onChangeText={(cpf) => setCpf(cpf)}
          />
 
         <Input
              placeholder="Telefone"
+             value={telefone}
+             onChangeText={(telefone) => setTelefone(telefone)}
          />
 
         <Input
              placeholder="E-mail"
+             value={email}
+             onChangeText={(email) => setEmail(email)}
          />
 
         <Input
              placeholder="Senha"
+             value={senha}
+             onChangeText={(senha) => setSenha(senha)}
          />
 
          <Button onPress={() => cadastrarUsuario()}>
