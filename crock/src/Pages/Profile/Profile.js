@@ -21,7 +21,7 @@ export default function Profile({ navigation }) {
         </ButtonSignOut>
 
         <ContainerCenterHead>
-          <Text> Nome </Text>
+          <Text> Marcelo </Text>
         </ContainerCenterHead>
       </Head>
       <Text> Perfil </Text>
