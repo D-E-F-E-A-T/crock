@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, ImageBackground, StyleSheet, } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import firebase from '../../services/firebaseConnection';
 
 import { 
     Container, Title, InputForm, Button, TextButton,
@@ -13,6 +14,29 @@ export default function ScreenEmpresa({ navigation }) {
  const[estado, setEstado] = useState('');
  const[cidade, setCidade] = useState('');
  const[especialidade, setEspecialidade] = useState('');
+ const[cnpj, setCnpj] = useState('');
+ const[razao_social, setRazao_social] = useState('');
+ const[nome_fantasia, setNome_fantasia] = useState('');
+ const[cep, setCep] = useState('');
+
+ async function cadastrarEmpresa(){
+    if(cnpj !== '' && nome_fantasia !== '' && razao_social !== ''){
+        let uid = await firebase.auth().currentUser.uid;
+        let key = await firebase.database().ref('empresa').child(uid).push().key;
+
+        await firebase.database().ref('empresa').child(uid).child(key).set({
+            estado: estado,
+            cidade: cidade,
+            especialidade: especialidade,
+            cnpj: cnpj,
+            razao_social: razao_social,
+            nome_fantasia: nome_fantasia,
+            cep: cep
+        }).catch((error) => {
+            alert(error.code);
+        });
+    }
+ } 
  return (
    <Container>
        <Header>
@@ -67,7 +91,7 @@ export default function ScreenEmpresa({ navigation }) {
         </ContainerEndereco>
 
 
-        <Button>
+        <Button onPress={() => cadastrarEmpresa()}>
             <TextButton> Cadastrar </TextButton>
         </Button>
    </Container>

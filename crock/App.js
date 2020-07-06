@@ -19,7 +19,6 @@ import Preload from './src/components/Preload/';
 import Products from './src/Pages/Products';
 import Profile from './src/Pages/Profile/Profile';
 
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 

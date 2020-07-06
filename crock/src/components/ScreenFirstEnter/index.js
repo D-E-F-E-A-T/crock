@@ -2,8 +2,9 @@ import React  from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 
 import { 
-    Container, Button, TextButton, Title, 
+    Container, Button, TextButton, Title, ContainerTitle,
 } from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function ScreenFirstEnter({ navigation }) {
 
@@ -11,15 +12,24 @@ export default function ScreenFirstEnter({ navigation }) {
    <Container>
         
         <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
-            <Container>
+
+            <ContainerTitle>
                 <Title> Opa! Tudo bem </Title>
-                <Title> queremos saber quem é você? </Title>
-                <Button onPress={()=> navigation.navigate('ScreenEnpreendedor')}>
-                    <TextButton> Empreendedor </TextButton>
+                <Title> Seja Bem-vindo ao Crock! </Title>
+            </ContainerTitle>
+            <Container>
+                
+                
+                <Button onPress={()=> navigation.navigate('Preload')}>
+                    <TextButton> Acessar </TextButton>
                 </Button>
 
-                <Button onPress={()=> navigation.navigate('Preload')}>
-                    <TextButton> Consumidor </TextButton>
+                <Button style={{backgroundColor:'#DB4A39'}} >
+                    <TextButton> <Icon name="logo-google" color="#FFB333" size={30}/> Acessar com Google  </TextButton>
+                </Button>
+
+                <Button style={{backgroundColor:'#3B5998'}} >
+                    <TextButton> <Icon name="logo-facebook" color="#FFB333" size={30}/> Acessar com Facebook  </TextButton>
                 </Button>
             </Container>
         </ImageBackground>
@@ -32,6 +42,7 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         resizeMode: "cover",
-        justifyContent: "center"
+        justifyContent: "center",
+        width:'100%',
     }
 });

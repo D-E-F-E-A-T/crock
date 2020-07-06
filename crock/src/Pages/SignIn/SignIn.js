@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StatusBar, TouchableOpacity, View } from 'react-native';
+import { StatusBar, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../../services/firebaseConnection/';
 
@@ -25,7 +25,9 @@ export default function SignIn({ navigation }) {
  return (
    <Container>
        <CantainerForm>
+       <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
         <Form>
+        
             <Title> Login </Title>
             <Input
                 placeholder="E-mail"
@@ -45,11 +47,10 @@ export default function SignIn({ navigation }) {
                     <Icon name="arrow-right" color="#FFF" size={20} />
                 </ContainerTextButton>
             </Button>
-
             
-
             
         </Form>
+        </ImageBackground>
 
         
        </CantainerForm>
@@ -62,3 +63,13 @@ export default function SignIn({ navigation }) {
    </Container>
   );
 }
+
+const styles = StyleSheet.create({
+    image: {
+        // flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        opacity: 0.6,
+        width:'90%',
+    }
+});

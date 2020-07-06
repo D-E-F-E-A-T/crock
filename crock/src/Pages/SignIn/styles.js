@@ -7,6 +7,7 @@ export const Container = styled(LienarGradient).attrs({
     locations:[0,1.5,0.6],
 })`
 flex: 1;
+
 background-color: #FFF;
 `;
  

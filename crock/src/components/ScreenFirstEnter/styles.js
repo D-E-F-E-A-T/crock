@@ -4,14 +4,14 @@ import LinearGradient from 'react-native-linear-gradient';
 export const Container = styled.View`
 flex: 1;
 align-items: center;
-justify-content: center;
+justify-content: flex-end;
 `;
 
 export const Button = styled.TouchableOpacity`
 width: 90%;
 height: 50px;
 
-background-color: #FFA500;
+background-color: #FFF;
 
 border-radius: 8px;
 
@@ -20,10 +20,15 @@ justify-content: center;
 margin: 8px;
 `;
 
+export const ContainerTitle = styled.View`
+align-items: center;
+margin-top: 50px;
+`;
+
 export const TextButton = styled.Text`
-color: #FFF;
+color: #FFB333;
 font-weight: bold;
-font-size: 20px;
+font-size: 17px;
 `;
 
 export const Title = styled.Text`
