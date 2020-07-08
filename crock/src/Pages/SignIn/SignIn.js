@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { StatusBar, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { StatusBar, TouchableOpacity, StyleSheet, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import firebase from '../../services/firebaseConnection/';
 
 import { 
     Container, Input, TextButton, Button, Form,
     Title, CantainerForm, TextFooter, TextSignUp,
-    ContainerTextButton, Footer, 
+    ContainerTextButton, Footer, ButtonReturn, 
  } from './styles';
 
 export default function SignIn({ navigation }) {
@@ -24,8 +24,10 @@ export default function SignIn({ navigation }) {
  }
  return (
    <Container>
+        <ButtonReturn onPress={()=> navigation.navigate("ScreenFirstEnter")}>
+            <Icon style={{ margin: 10,  }} name="arrow-left" color="#FFF" size={40} />
+        </ButtonReturn>
        <CantainerForm>
-       <ImageBackground source={require('../../assets/almoco.jpg')} style={styles.image}>
         <Form>
         
             <Title> Login </Title>
@@ -50,7 +52,6 @@ export default function SignIn({ navigation }) {
             
             
         </Form>
-        </ImageBackground>
 
         
        </CantainerForm>

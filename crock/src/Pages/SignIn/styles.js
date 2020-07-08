@@ -78,3 +78,7 @@ color: #FFF;
 font-weight: bold;
 font-size: 15px;
 `;
+
+export const ButtonReturn = styled.TouchableOpacity`
+margin-top: 10px;
+`;

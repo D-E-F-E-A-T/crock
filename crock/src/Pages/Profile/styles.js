@@ -13,13 +13,10 @@ font-weight: bold;
 export const Head = styled.View`
 background-color: #FFB333;
 width: 100%;
-height: 45%;
+height: 20%;
 
 border-width: 1px;
 border-color: #CCC;
-
-border-bottom-left-radius: 70px;
-border-bottom-right-radius: 70px;
 
 padding-top: 30px;
 padding-left: 5px;
@@ -32,3 +29,4 @@ justify-content: center;
 `;
 
 export const ButtonSignOut = styled.TouchableOpacity``;
+

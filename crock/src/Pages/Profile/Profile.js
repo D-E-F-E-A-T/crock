@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import firebase from '../../services/firebaseConnection/';
@@ -9,6 +9,12 @@ import {
 
 export default function Profile({ navigation }) {
 
+  useEffect(() => {
+    let uid = firebase.auth().currentUser.uid;
+
+    
+  },[]);
+
   function SignOutProfile(){
     return firebase.auth().signOut();
   }
@@ -17,7 +23,7 @@ export default function Profile({ navigation }) {
       <Head>
         
         <ButtonSignOut onPress={() => SignOutProfile()}>
-          <Icon name="ios-power" size={30} color="#FFF" />
+          <Icon name="ios-power" size={25} color="#FFF" />
         </ButtonSignOut>
 
         <ContainerCenterHead>
