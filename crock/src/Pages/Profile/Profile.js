@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import firebase from '../../services/firebaseConnection/';
@@ -9,6 +9,7 @@ import {
 
 export default function Profile({ navigation }) {
 
+  const[nome, setNome] = useState('');
   useEffect(() => {
     let uid = firebase.auth().currentUser.uid;
 
@@ -27,7 +28,7 @@ export default function Profile({ navigation }) {
         </ButtonSignOut>
 
         <ContainerCenterHead>
-          <Text> Marcelo </Text>
+          <Text> {nome} </Text>
         </ContainerCenterHead>
       </Head>
       <Text> Perfil </Text>
