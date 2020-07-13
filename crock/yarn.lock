@@ -6044,6 +6044,11 @@ react-native-status-bar-height@^2.5.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
 
+react-native-update-gradle@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-update-gradle/-/react-native-update-gradle-1.2.0.tgz#b05f9f0ac0ad41bd9a7c89f828338968c02c1718"
+  integrity sha512-fCpIwfrAb0QQpgnp/9kpZMDJqnQHlEV6BNg3AxLf+Ho/sTqa+3x5KuGiPOubIGilQAZu+9gIXETdg9D++xN62w==
+
 react-native-vector-icons@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-7.0.0.tgz#5b92ed363c867645daad48c559e1f99efcfbb813"

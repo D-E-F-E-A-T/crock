@@ -17,7 +17,7 @@ import ScreenFirstEnter from './src/components/ScreenFirstEnter/';
 import ScreenEmpresa from './src/Pages/ScreenEmpresa/';
 import Preload from './src/components/Preload/';
 import Products from './src/Pages/Products';
-import Profile from './src/Pages/Profile/Profile';
+import Profile from './src/Pages/Profile';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -66,7 +66,7 @@ export function Tabs(){
 }
 
 function App() {
-  // console.disableYellowBox=true;
+  console.disableYellowBox=true;
   return (
     <NavigationContainer style={styles.container}>
       <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />

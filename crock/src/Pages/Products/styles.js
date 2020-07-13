@@ -13,13 +13,12 @@ export const Head = styled.View`
 width: 100%;
 height: 20%;
 
-background-color: #FDD333;
+background-color: #FFB333;
 `;
 
 export const Scroll = styled.ScrollView`
 `;
 
 export const CenterView = styled.View`
-/* align-items: center; */
-/* justify-content: center; */
+margin-bottom: 15px;
 `;
