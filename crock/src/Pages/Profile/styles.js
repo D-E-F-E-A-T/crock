@@ -5,8 +5,8 @@ flex: 1;
 align-items: center;
 `;
 
-export const Text = styled.Text`
-font-size: 30px;
+export const TextName = styled.Text`
+font-size: 18px;
 font-weight: bold;
 `;
 

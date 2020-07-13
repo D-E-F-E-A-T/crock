@@ -9,7 +9,7 @@ export default function Preload({ navigation }) {
       if(user){
         navigation.navigate('Tabs');
       } else {
-        navigation.navigate('SignIn');
+        navigation.navigate('ScreenFirstEnter');
       }
     })
   },[]);

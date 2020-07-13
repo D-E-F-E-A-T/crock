@@ -32,10 +32,10 @@ export function Tabs(){
 
           if (route.name === 'Profile') {
             iconName = focused
-              ? 'ios-information-circle'
-              : 'ios-information-circle-outline';
-          } else if (route.name === 'Cards') {
-            iconName = focused ? 'ios-list-box' : 'ios-list';
+              ? 'home'
+              : 'home';
+          } else if (route.name === 'Products') {
+            iconName = focused ? 'fast-food' : 'fast-food';
           }
 
           // You can return any component that you like here!
@@ -47,8 +47,20 @@ export function Tabs(){
         inactiveTintColor: 'gray',
       }}
     >
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Products" component={Products} />
+      <Tab.Screen 
+        name="Profile" 
+        component={Profile}
+        options={{
+          tabBarLabel: "Perfil"
+        }}
+      />
+      <Tab.Screen 
+        name="Products"
+        component={Products}
+        options={{
+          tabBarLabel: "Produtos"
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -59,11 +71,11 @@ function App() {
     <NavigationContainer style={styles.container}>
       <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
       <Stack.Navigator>
-      <Stack.Screen name="FirstLoad" component={FirstLoad} options={{ headerShown: false }} />
+        <Stack.Screen name="Preload" component={Preload} options={{ headerShown: false }}  />
+        <Stack.Screen name="FirstLoad" component={FirstLoad} options={{ headerShown: false }} />
         <Stack.Screen name="ScreenFirstEnter" component={ScreenFirstEnter} options={{ headerShown: false }} />
         <Stack.Screen name="ScreenEnpreendedor" component={ScreenEnpreendedor} options={{ headerShown: false }}  />
         <Stack.Screen name="ScreenEmpresa" component={ScreenEmpresa} options={{ headerShown: false }}  />
-        <Stack.Screen name="Preload" component={Preload} options={{ headerShown: false }}  />
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}  />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
         <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />

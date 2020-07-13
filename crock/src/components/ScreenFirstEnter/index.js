@@ -20,7 +20,7 @@ export default function ScreenFirstEnter({ navigation }) {
             <Container>
                 
                 
-                <Button onPress={()=> navigation.navigate('Preload')}>
+                <Button onPress={()=> navigation.navigate('SignIn')}>
                     <TextButton> Acessar </TextButton>
                 </Button>
 

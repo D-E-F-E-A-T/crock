@@ -41,6 +41,8 @@ export default function SignIn({ navigation }) {
                 placeholder="Senha"
                 value={password}
                 onChangeText={(password)=> setPassword(password)}
+                secureTextEntry={true}
+                keyboardType="numeric"
             />
 
             <Button onPress={()=> AcessApp()}>
